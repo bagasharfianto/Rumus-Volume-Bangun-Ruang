@@ -4,14 +4,15 @@ using namespace std;
 
 void displayMenu();
 
-void Kubus(int Sisi);
-void Balok(int Panjang,int Lebar,int tinggi);
-void Tabung(double rata_rata, double Tinggi);
+void Kubus(double Sisi);
+void Balok(double Panjang,double Lebar,double tinggi);
+void Tabung(double rataRata, double Tinggi);
 void prismaSegitiga(double alas, double tinggi, double tinggiPrisma);
 void limasSegiEmpat(double luasAlas, double Tinggi);
 void Kerucut(double rataRata, double tinggi);
 
 int main() {
+	double sisi, panjang, lebar, tinggi, tinggiPrisma, alas, luasAlas, rataRata;
 	int choise = 1;
 	do {
 		system("cls");
@@ -20,7 +21,6 @@ int main() {
 	
 	switch (choise) {
 	case 1:
-			int sisi;
 			system("cls");
 			cout << "Hitung Volume Kubus\n";
 			cout << "Silahkan Masukkan Velue Sisi: ";
@@ -29,7 +29,6 @@ int main() {
 			system("PAUSE");
 			break;
 	case 2:
-		int panjang, lebar, tinggi;
 		system("cls");
 		cout << "Hitung Volume Balok\n";
 		cout << "Silahkan Masukkan: \n";
@@ -43,7 +42,6 @@ int main() {
 		system("PAUSE");
 		break;
 	case 3:
-		double rataRata, tinggi;
 		system("cls");
 		cout << "Hitung Volume Tabung\n";
 		cout << "Silahkan Masukkan: \n";
@@ -55,7 +53,6 @@ int main() {
 		system("PAUSE");
 		break;
 	case 4:
-		double rataRata, tinggi,tinggiPrisma;
 		system("cls");
 		cout << "Hitung Volume Prisma Segitiga\n";
 		cout << "Silahkan Masukkan: \n";
@@ -69,7 +66,6 @@ int main() {
 		system("PAUSE");
 		break;
 	case 5:
-		double luasAlas, tinggi;
 		system("cls");
 		cout << "Hitung Volume Limas Segi empat\n";
 		cout << "Silahkan Masukkan: \n";
@@ -81,7 +77,6 @@ int main() {
 		system("PAUSE");
 		break;
 	case 6:
-		double rataRata, tinggi;
 		system("cls");
 		cout << "Hitung Volume Kerucut\n";
 		cout << "Silahkan Masukkan: \n";
@@ -89,8 +84,6 @@ int main() {
 		cin >> rataRata;
 		cout << "Tinggi : \n";
 		cin >> tinggi;
-		cout << "Tinggi Prisma : \n";
-		cin >> tinggiPrisma;
 		Kerucut(rataRata, tinggi);
 		system("PAUSE");
 		break;
@@ -109,16 +102,17 @@ void displayMenu() {
 	cout << "4- Volume Prisma Segitiga\n";
 	cout << "5- Volume Limas Segi Empat\n";
 	cout << "6- Volume Kerucut\n";
+	cout << "0- CLOSE PROGRAM\n";
 	cout << "=====================\n";
 }
 
-void Kubus(int sisi) {
-	int volume = sisi * sisi * sisi;
+void Kubus(double sisi) {
+	double volume = sisi * sisi * sisi;
 	cout << "Volume dari Kubus adalah: "<< volume <<"\n";
 }
 
-void Balok(int panjang, int lebar, int tinggi) {
-	int volume = panjang * lebar * tinggi;
+void Balok(double panjang, double lebar, double tinggi) {
+	double volume = panjang * lebar * tinggi;
 	cout << "Volume dari Balok adalah: " << volume << "\n";
 }
 
@@ -134,12 +128,12 @@ void prismaSegitiga(double alas, double tinggi, double tinggiPrisma) {
 }
 
 void limasSegiEmpat(double luasAlas, double tinggi) {
-	double volume = 1 / 3 * luasAlas * tinggi;
+	double volume = 0.33 * luasAlas * tinggi;
 	cout << "Volume dari limasSegiEmpat adalah: " << volume << "\n";
 }
 
 void Kerucut(double rataRata, double tinggi) {
 	const double phi = 3.14;
-	double volume = 1 / 3 * (phi * rataRata) * tinggi;
+	double volume = 0.33 * (phi * rataRata) * tinggi;
 	cout << "Volume dari Kerucut adalah: " << volume << "\n";
 }
